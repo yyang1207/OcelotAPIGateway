@@ -1,11 +1,61 @@
 {
-  "ReRoutes": [],
+  "ReRoutes": [
+    //{
+    //  "DownstreamPathTemplate": "/api/{url}",
+    //  "DownstreamScheme": "http",
+    //  "LoadBalancerOptions": {
+    //    "Type": "RoundRobin"
+    //  },
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "119.3.141.39",
+    //      "Port": "5006"
+    //    },
+    //    {
+    //      "Host": "119.3.134.203",
+    //      "Port": "5006"
+    //    },
+    //    {
+    //      "Host": "122.112.245.123",
+    //      "Port": "5006"
+    //    }
+    //  ],
+    //  "UpstreamPathTemplate": "/Core.Identity/{url}",
+    //  "UpstreamHttpMethod": [ "Get", "Post" ]
+    //}
+  ],
   "Aggregates": [],
   "GlobalConfiguration": {
+    "RequestIdKey": null,
     "ServiceDiscoveryProvider": {
-      "Host": "49.235.88.103",
-      "Port": 8500
+      "Host": "49.235.88.103", // Consul Service IP
+      "Port": 8500, // Consul Service Port
+      "Type": "Consul",
+      "Token": null,
+      "ConfigurationKey": null
     },
-    "DownstreamScheme": "http"
+    "RateLimitOptions": {
+      "DisableRateLimitHeaders": false, // Http头  X-Rate-Limit 和 Retry-After 是否禁用
+      "QuotaExceededMessage": "Too many requests, are you OK?", // 当请求过载被截断时返回的消息
+      "HttpStatusCode": 999, // 当请求过载被截断时返回的http status
+      "ClientIdHeader": "client_id" // 用来识别客户端的请求头，默认是 ClientId
+    },
+    //"QoSOptions": {
+    //  "ExceptionsAllowedBeforeBreaking": 3,
+    //  "DurationOfBreak": 10000,
+    //  "TimeoutValue": 5000
+    //},
+    "BaseUrl": null,
+    "LoadBalancerOptions": {
+      "Type": "LeastConnection",
+      "Key": null,
+      "Expiry": 0
+    },
+    "DownstreamScheme": "http",
+    "HttpHandlerOptions": {
+      "AllowAutoRedirect": false,
+      "UseCookieContainer": false,
+      "UseTracing": false
+    }
   }
 }
