@@ -1,0 +1,11 @@
+{
+  "ReRoutes": [],
+  "Aggregates": [],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Host": "49.235.88.103",
+      "Port": 8500
+    },
+    "DownstreamScheme": "http"
+  }
+}
