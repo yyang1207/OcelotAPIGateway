@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Ocelot.Provider.Consul;
+using Ocelot.Provider.Polly;
 
 namespace APIGateway
 {
@@ -28,7 +29,7 @@ namespace APIGateway
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddControllers();
-            services.AddOcelot().AddConsul();
+            services.AddOcelot().AddConsul().AddPolly();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

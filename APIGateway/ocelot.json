@@ -28,7 +28,7 @@
   "GlobalConfiguration": {
     "RequestIdKey": null,
     "ServiceDiscoveryProvider": {
-      "Host": "49.235.88.103", // Consul Service IP
+      "Host": "122.112.245.123", // Consul Service IP
       "Port": 8500, // Consul Service Port
       "Type": "Consul",
       "Token": null,
@@ -40,11 +40,11 @@
       "HttpStatusCode": 999, // 当请求过载被截断时返回的http status
       "ClientIdHeader": "client_id" // 用来识别客户端的请求头，默认是 ClientId
     },
-    //"QoSOptions": {
-    //  "ExceptionsAllowedBeforeBreaking": 3,
-    //  "DurationOfBreak": 10000,
-    //  "TimeoutValue": 5000
-    //},
+    "QoSOptions": {
+      "ExceptionsAllowedBeforeBreaking": 3,
+      "DurationOfBreak": 10000,
+      "TimeoutValue": 5000
+    },
     "BaseUrl": null,
     "LoadBalancerOptions": {
       "Type": "LeastConnection",
